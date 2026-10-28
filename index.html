@@ -1,0 +1,517 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LeituraViva | Sua próxima história</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff8e8;
+    color: #4a1728;
+    line-height: 1.6;
+}
+
+header {
+    background: #6d2038;
+    color: #fff4cc;
+    padding: 20px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 29px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #fff4cc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #f8d979;
+}
+
+.hero {
+    padding: 85px 8%;
+    text-align: center;
+    background: linear-gradient(135deg, #f8e6a0, #fff4cc);
+}
+
+.hero .tag {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.15;
+    margin: 15px 0;
+}
+
+.hero p {
+    max-width: 650px;
+    margin: 0 auto 25px;
+}
+
+.botao {
+    display: inline-block;
+    background: #6d2038;
+    color: #fff4cc;
+    padding: 12px 25px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.botao:hover {
+    background: #4a1728;
+}
+
+.destaques {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
+    background: #6d2038;
+    color: #fff4cc;
+    padding: 22px;
+    text-align: center;
+}
+
+section.catalogo {
+    padding: 55px 7%;
+}
+
+.titulo-secao {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+.descricao-secao {
+    text-align: center;
+    margin: 0 auto 30px;
+    max-width: 650px;
+}
+
+.categoria {
+    margin: 35px 0 15px;
+    font-size: 23px;
+    border-left: 5px solid #c49b42;
+    padding-left: 12px;
+}
+
+.grade-livros {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+    gap: 22px;
+}
+
+.livro {
+    background: #fffdf7;
+    border: 1px solid #eadfca;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px #4a172814;
+    transition: transform 0.2s;
+}
+
+.livro:hover {
+    transform: translateY(-5px);
+}
+
+.livro img {
+    width: 100%;
+    height: 245px;
+    object-fit: cover;
+    display: block;
+    background: #f8e6a0;
+}
+
+.info-livro {
+    padding: 13px;
+}
+
+.info-livro h4 {
+    font-size: 15px;
+    line-height: 1.35;
+    margin-bottom: 6px;
+}
+
+.info-livro p {
+    font-size: 12px;
+    color: #785665;
+}
+
+.etiqueta {
+    display: inline-block;
+    margin-top: 10px;
+    background: #f8e6a0;
+    color: #4a1728;
+    padding: 3px 9px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.sobre {
+    background: #f8e6a0;
+    text-align: center;
+    padding: 55px 8%;
+}
+
+.sobre p {
+    max-width: 700px;
+    margin: 12px auto;
+}
+
+.newsletter {
+    padding: 50px 20px;
+    text-align: center;
+    background: #fffdf7;
+}
+
+.newsletter p {
+    margin: 10px auto 20px;
+}
+
+.newsletter a {
+    color: #6d2038;
+    font-weight: bold;
+}
+
+footer {
+    background: #4a1728;
+    color: #fff4cc;
+    text-align: center;
+    padding: 25px;
+}
+
+@media (max-width: 600px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .hero {
+        padding: 60px 20px;
+    }
+
+    section.catalogo {
+        padding: 40px 18px;
+    }
+
+    .grade-livros {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 13px;
+    }
+
+    .livro img {
+        height: 220px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">📚 LeituraViva</div>
+
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#fantasia">Fantasia</a>
+        <a href="#romance">Romance</a>
+        <a href="#terror">Terror</a>
+        <a href="#sobre">Sobre</a>
+    </nav>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+    <p class="tag">Seu próximo universo começa aqui</p>
+    <h1>Entre páginas,<br>descubra novos mundos.</h1>
+    <p>
+        De romances que aquecem o coração a fantasias cheias de magia
+        e histórias de terror arrepiantes: encontre sua próxima leitura.
+    </p>
+    <a href="#livros" class="botao">Explorar a estante</a>
+</section>
+
+<div class="destaques">
+    <span>✨ Novos mundos</span>
+    <span>💌 Histórias de amor</span>
+    <span>🐉 Fantasia épica</span>
+    <span>👻 Noites de terror</span>
+</div>
+
+<section class="catalogo" id="livros">
+    <h2 class="titulo-secao">Nossa estante</h2>
+    <p class="descricao-secao">
+        Uma seleção para quem ama se perder em uma boa história.
+        Qual desses vai para a sua lista de leitura?
+    </p>
+
+    <h3 class="categoria" id="fantasia">🐉 Fantasia e aventuras</h3>
+
+    <div class="grade-livros">
+
+        <article class="livro">
+            <img src="https://images.penguinrandomhouse.com/cover/9781368051477"
+                 alt="Capa de Percy Jackson e o Ladrão de Raios"
+                 loading="lazy">
+            <div class="info-livro">
+                <h4>Percy Jackson</h4>
+                <p>Rick Riordan</p>
+                <span class="etiqueta">Mitologia</span>
+            </div>
+        </article>
+
+        <article class="livro">
+            <img src="https://covers.openlibrary.org/b/ISBN/9788532530783-L.jpg"
+                 alt="Capa de Harry Potter"
+                 loading="lazy">
+            <div class="info-livro">
+                <h4>Harry Potter</h4>
+                <p>J. K. Rowling</p>
+                <span class="etiqueta">Magia</span>
+            </div>
+        </article>
+
+        <article class="livro">
+            <img src="https://tse2.mm.bing.net/th/id/OIP.lniPkj1ayhwv9U8Xxf2OdwHaLN?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                 alt="Capa de Quarta Asa"
+                 loading="lazy">
+            <div class="info-livro">
+                <h4>Quarta Asa</h4>
+                <p>Rebecca Yarros</p>
+                <span class="etiqueta">Dragões</span>
+            </div>
+        </article>
+
+        <article class="livro">
+            <img src="https://m.media-amazon.com/images/I/919SFXCRh9L._SL1500_.jpg"
+                 alt="Capa de Chama de Ferro"
+                 loading="lazy">
+            <div class="info-livro">
+                <h4>Chamas de Ferro</h4>
+                <p>Rebecca Yarros</p>
+                <span class="etiqueta">Fantasia</span>
+            </div>
+        </article>
+
+        <article class="livro">
+            <img src="https://m.media-amazon.com/images/I/91915km0UdL._SL1500_.jpg"
+                 alt="Capa de Tempestade de Ônix"
+                 loading="lazy">
+            <div class="info-livro">
+                <h4>A Tempestade de Ônix</h4>
+                <p>Rebecca Yarros</p>
+                <span class="etiqueta">Dragões</span>
+            </div>
+        </article>
+
+        <article class="livro">
+            <img src="https://m.media-amazon.com/images/I/81FH6q0EqYS._SL1500_.jpg"
+                 alt="Capa de O Príncipe Cruel"
+                 loading="lazy">
+            <div class="info-livro">
+                <h4>O Príncipe Cruel</h4>
+                <p>Holly Black</p>
+                <span class="etiqueta">Fadas</span>
+            </div>
+        </article>
+
+        <article class="livro">
+            <img src="https://tse4.mm.bing.net/th/id/OIP.8Wb45J_0w4RUf58TssfiiwHaLS?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                 alt="Capa de O Rei Perverso"
+                 loading="lazy">
+            <div class="info-livro">
+                <h4>O Rei Perverso</h4>
+                <p>Holly Black</p>
+                <span class="etiqueta">Intrigas</span>
+            </div>
+        </article>
+
+        <article class="livro">
+            <img src="https://aishando.home.blog/wp-content/uploads/2021/08/03-a-rainha-do-nada.jpg"
+                 alt="Capa de A Rainha do Nada"
+                 loading="lazy">
+            <div class="info-livro">
+                <h4>A Rainha do Nada</h4>
+                <p>Holly Black</p>
+                <span class="etiqueta">Fantasia</span>
+            </div>
+        </article>
+
+        <article class="livro">
+            <img src="https://m.media-amazon.com/images/I/81TjnGG0g7L.jpg"
+                 alt="Capa de Sangue e Cinzas"
+                 loading="lazy">
+            <div class="info-livro">
+                <h4>Sangue e Cinzas</h4>
+                <p>Jennifer L. Armentrout</p>
+                <span class="etiqueta">Fantasia</span>
+            </div>
+        </article>
+
+    </div>
+
+    <h3 class="categoria" id="romance">💌 Romance e comédia romântica</h3>
+
+    <div class="grade-livros">
+
+        <article class="livro">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjU2nJvF9hVmfNNvJQcULNWTHQAaR5KWDgEaH7dWoU16spc3emQ0VCYrF2Q5CA6NFZX8bdryTVNEvk3bct1fCCsujJ1M0HQ3fSTpea4a9mFijKip-muMc9fg2t7jpZjG-LlRCs79OLwoEbxCdJQIzbcoqKg0BYFOdY35sSdgRs6-MTL_O5ITA366DypyLE/w133-h200/41pWbbQWPeL._SY445_SX342_.jpg"
+                 alt="Capa de Melhor do que nos Filmes"
+                 loading="lazy">
+            <div class="info-livro">
+                <h4>Melhor do Que nos Filmes</h4>
+                <p>Lynn Painter</p>
+                <span class="etiqueta">Romance</span>
+            </div>
+        </article>
+
+        <article class="livro">
+            <img src="https://m.media-amazon.com/images/I/81hK-E1S3lL.jpg"
+                 alt="Capa de Mil Beijos de Garoto"
+                 loading="lazy">
+            <div class="info-livro">
+                <h4>Mil Beijos de Garoto</h4>
+                <p> éTillie Cole</p>
+                <span class="etiqueta">Romance</span>
+            </div>
+        </article>
+
+        <article class="livro">
+            <img src="https://m.media-amazon.com/images/I/81WHT+l7-4L._SL1500_.jpg"
+                 alt="Capa de Clube do Livro dos Homens"
+                 loading="lazy">
+            <div class="info-livro">
+                <h4>Clube do Livro dos Homens</h4>
+                <p>Lyssa Kay Adams</p>
+                <span class="etiqueta">Comédia romântica</span>
+            </div>
+        </article>
+
+        <article class="livro">
+            <img src="https://manualgeek.com.br/wp-content/uploads/2023/01/TATICAS-DO-AMOR-1024x1536.jpg"
+                 alt="Capa de Táticas do Amor"
+                 loading="lazy">
+            <div class="info-livro">
+                <h4>Táticas do Amor</h4>
+                <p>Romance contemporâneo</p>
+                <span class="etiqueta">Romance</span>
+            </div>
+        </article>
+
+        <article class="livro">
+            <img src="https://faroeditorial.com.br/site2020/wp-content/uploads/2022/02/Imperfeitos-768x1226.png"
+                 alt="Capa de Imperfeitos"
+                 loading="lazy">
+            <div class="info-livro">
+                <h4>Imperfeitos</h4>
+                <p>Christina Lauren</p>
+                <span class="etiqueta">Romance</span>
+            </div>
+        </article>
+
+    </div>
+
+    <h3 class="categoria" id="terror">👻 Terror e suspense</h3>
+
+    <div class="grade-livros">
+
+        <article class="livro">
+            <img src="https://th.bing.com/th/id/R.9f7d3f32242dd4bca98feae1b13bb6a8?rik=Hn0OArxa1Io6Pg&riu=http%3a%2f%2fwww.extra-imagens.com.br%2flivros%2fLivrodeLiteraturaEstrangeira%2fSuspensedeTerror%2f3477459%2f48556750%2fLivro-It-a-Coisa-Stephen-King-3477459.jpg&ehk=aWWbfz9cZZaM%2fXhZnqlYx0bvPMx43hGRAHho9RLJfSM%3d&risl=&pid=ImgRaw&r=0"
+                 alt="Livro de terror ilustrativo"
+                 loading="lazy">
+            <div class="info-livro">
+                <h4>It: A Coisa</h4>
+                <p>Stephen King</p>
+                <span class="etiqueta">Terror</span>
+            </div>
+        </article>
+
+        <article class="livro">
+            <img src="https://br.web.img3.acsta.net/c_310_420/pictures/14/10/10/19/21/152595.jpg"
+                 alt="Livro de terror ilustrativo"
+                 loading="lazy">
+            <div class="info-livro">
+                <h4>O Iluminado</h4>
+                <p>Stephen King</p>
+                <span class="etiqueta">Terror psicológico</span>
+            </div>
+        </article>
+
+        <article class="livro">
+            <img src="https://sessaodasdez.com.br/wp-content/uploads/2022/01/coraline_livro.jpg"
+                 alt="Livro de terror ilustrativo"
+                 loading="lazy">
+            <div class="info-livro">
+                <h4>Coraline</h4>
+                <p>Neil Gaiman</p>
+                <span class="etiqueta">Fantasia sombria</span>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<section class="sobre" id="sobre">
+    <h2>Mais do que livros, novos universos.</h2>
+    <p>
+        O LeituraViva nasceu para reunir leitores apaixonados por
+        histórias. Aqui, cada gênero tem seu espaço e cada página
+        pode se transformar em uma nova aventura.
+    </p>
+</section>
+
+<section class="newsletter">
+    <h2>📖 Sua próxima leitura começa aqui</h2>
+    <p>
+        Explore os livros, escolha seu gênero favorito e monte
+        sua própria lista de leituras.
+    </p>
+    <a href="#livros">Voltar para a estante ↑</a>
+</section>
+</main>
+
+<footer>
+    <p>LeituraViva © 2026</p>
+    <p>Feito com carinho para quem ama ler. 💗</p>
+</footer>
+
+</body>
+</html>
